@@ -1,0 +1,29 @@
+SRRRS
+R   R
+R  GR
+R   R
+SRRRS
+
+SRRS 
+R  R 
+   R 
+R  R 
+SRRS 
+
+SRS  
+R R  
+  R  
+R R  
+SRS  
+
+SS   
+RR   
+RR   
+RR   
+SS   
+
+S    
+S    
+S    
+S    
+S    
