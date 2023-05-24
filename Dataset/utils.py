@@ -1,6 +1,6 @@
 def get_pose(mc):
     position_rel = mc.player.getPos()
-    position_abs = position_rel.x+8, position_rel.y+4, position_rel.z+8
+    position_abs = position_rel.x-SPAWN_OFFSET[0], position_rel.y-SPAWN_OFFSET[1], position_rel.z-SPAWN_OFFSET[2]
     rotation = mc.player.getRotation()
     pitch = mc.player.getPitch()
 
@@ -14,4 +14,4 @@ def get_pose(mc):
 
     return pose
 
-SPAWN_OFFSET = ()
+SPAWN_OFFSET = (-8, -4, -8)

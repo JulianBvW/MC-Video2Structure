@@ -10,7 +10,7 @@ There are two datasets used in this project:
 
 1. Install the python package [mcpi](https://github.com/martinohanlon/mcpi).
 
-2. Create a default Minecraft (tested with version 1.19.2) server and install [Spigot](https://getbukkit.org/download/spigot).
+2. Create a default Minecraft (tested with version 1.19.4) server and install [Spigot](https://getbukkit.org/download/spigot).
 
 3. Place the plugin [RaspberryJuice](https://github.com/zhuowei/RaspberryJuice) in the plugin folder (don't mind that the plugin is made for an outdated Minecraft version).
 
@@ -18,9 +18,11 @@ There are two datasets used in this project:
 
     **Note**: If you are using WSL and you run Python with it, start the server also on WSL by allowing the Minecraft Port in your WSL firewall and starting the server with an added argument: ```java -Xmx2G -Djava.net.preferIPv4Stack=true -jar spigot-*.jar nogui```.
 
-5. Make sure to have a void world running on the server. This can be archieved by creating a Singleplayer world with the *Flat* world type and changing the preset to "Void". This world can then be copied to your server folder (and be sure to rename the world foldeer to "world").
+5. Make sure to have a void world running on the server. This can be archieved by creating a (Creative mode) Singleplayer world with the *Flat* world type and changing the preset to "Void". This world can then be copied to your server folder (and be sure to rename the world foldeer to "world").
 
-6. You can now run the python scripts that interact with the world as discussed in the next chapters.
+6. Join the server and run `\tp 0.0 0.0 0.0` **in-game** to teleport you to world center (make sure to fly in creative mode). Now run `python example_ccord_finder.py` **in a terminal**. If everything worked correctly, messages should appear in the chat showing you the mcpi relative coordinate offset. Write these coordinates in the `utils.py` file in the `SPAWN_OFFSET` tuple. If you move in your world and run the python script again, your correct coordinates (from the F degub menu) should appear in chat.
+
+6. If everything worked correctly, you can now run `python example_build_world.py` which will create a random structure in the world.
 
 ## Generating **MC BLocks**
 
