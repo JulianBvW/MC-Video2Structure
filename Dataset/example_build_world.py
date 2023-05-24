@@ -3,11 +3,13 @@ from time import sleep
 from tqdm import tqdm
 from structure_building_utils import make_world
 from utils import get_pose
+import sys
 
 mc = minecraft.Minecraft.create()
 base = (10, 1, 10)
 
-make_world(mc, base)
+size = int(sys.argv[1]) if len(sys.argv) > 1 else 3
+make_world(mc, base, n=size, it=((size+1)//2)**2)
 
 # for i in tqdm(range(50)):
 #     sleep(.1)

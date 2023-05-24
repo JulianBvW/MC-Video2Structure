@@ -19,10 +19,10 @@ def place_field(mc, base, structure_list):
 
 def clear_world(mc, base, n=50):
     bX, bY, bZ = base
-    mc.setBlocks(bX, bY, bZ, bX+50, bY+50, bZ+50, 0)
+    mc.setBlocks(bX, bY, bZ, bX+n, bY+2*n, bZ+n, 0)
 
 def make_world(mc, base, n=3, it=5):
-    clear_world(mc, base)
+    clear_world(mc, base, n=n*5)
     FIELD = structure_field_creator.generate_structure_field(n=n, it=it)
     place_field(mc, base, FIELD)
 
