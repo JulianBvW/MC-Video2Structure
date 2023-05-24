@@ -26,7 +26,15 @@ There are two datasets used in this project:
 
 ## Generating **MC BLocks**
 
-TBA
+As said, there are three different uses for this dataset so three different labels will be produced.
+The general outline of the dataset generation is the following:
+
+- A python script will build a random structure and then record your coordinates every second while your run/ fly around in your world. After a specified amount of time, the script will create a *Minecraft Datapack* that your can install into your world which will teleport you to the recorded coordinates so you can take a screenshot and get teleported to the next location (to take again a screenshot and so on...)
+- The screenshot loop will now be done **three times**: First in normal mode to record training data `X`. Then again with a *texture pack* for the BSA labels and lastly with a *shader pack* for the BDE labels. The labels for the CPE are already saved by the first step.
+
+### Recording coordinates
+
+Run `python create_mc_blocks.py <MINUTES TO RUN FOR>`. It will build a random structure and count down from 5 seconds. Position yourself where you want to start and then just walk and look around. The script will automatically save the camera pose every second. After the specified time period, a datapack is created TODO
 
 ## Generating **MC Structure Videos**
 
