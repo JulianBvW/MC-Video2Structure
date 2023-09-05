@@ -20,7 +20,7 @@ There are two datasets used in this project:
 
 5. Make sure to have a void world running on the server. This can be archieved by creating a (Creative mode) Singleplayer world with the *Flat* world type and changing the preset to "Void". This world can then be copied to your server folder (and be sure to rename the world foldeer to "world").
 
-6. Join the server and run `\tp 0.0 0.0 0.0` **in-game** to teleport you to world center (make sure to fly in creative mode). Now run `python example_ccord_finder.py` **in a terminal**. If everything worked correctly, messages should appear in the chat showing you the mcpi relative coordinate offset. Write these coordinates in the `utils.py` file in the `SPAWN_OFFSET` tuple. If you move in your world and run the python script again, your correct coordinates (from the F degub menu) should appear in chat.
+6. Join the server and run `\tp 0.0 0.0 0.0` **in-game** to teleport you to world center (make sure to fly in creative mode). Now run `python example_coord_finder.py` **in a terminal**. If everything worked correctly, messages should appear in the chat showing you the mcpi relative coordinate offset. Write these coordinates in the `utils.py` file in the `SPAWN_OFFSET` tuple. If you move in your world and run the python script again, your correct coordinates (from the F degub menu) should appear in chat.
 
 6. If everything worked correctly, you can now run `python example_build_world.py` which will create a random structure in the world. The argument for that file determines how big the created structure will be. Default is 3. Experiment around with it and clear everything up with `python example_clear_world.py <N BLOCKS>`.
 
