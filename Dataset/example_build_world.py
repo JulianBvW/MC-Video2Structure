@@ -9,7 +9,8 @@ mc = minecraft.Minecraft.create()
 base = (10, 1, 10)
 
 size = int(sys.argv[1]) if len(sys.argv) > 1 else 3
-make_world(mc, base, n=size, it=((size+1)//2)**2)
+it = int(sys.argv[2]) if len(sys.argv) > 2 else ((size+1)//2)**2
+make_world(mc, base, n=size, it=it)
 
 # for i in tqdm(range(50)):
 #     sleep(.1)
