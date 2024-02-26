@@ -56,14 +56,14 @@ Block Name | Symbol | `id` | `mcpi id`
 air          | ` ` [space] |  0 | 0
 stone        | `s`         |  1 | 1
 cobblestone  | `c`         |  2 | 4
-slabs        | `b`         |  3 | 58
+slabs        | `b`         |  3 | 61 (retextured furnace)
 bricks       | `X`         |  4 | 45
 grass        | `D`         |  5 | 2
 dirt         | `d`         |  6 | 3
 sand         | `~`         |  7 | 12
 planks       | `w`         |  8 | 5
 log          | `L`         |  9 | 17
-leaves       | `l`         | 10 | 18
+leaves       | `l`         | 10 | 56 (retextured diamond ore)
 wool         | `%`         | 11 | 35
 goldblock    | `-`         | 12 | 41
 ironblock    | `=`         | 13 | 42

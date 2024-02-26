@@ -30,14 +30,14 @@ k2id = {
     ' ': 0,    # air
     's': 1,    # stone
     'c': 2,    # cobblestone
-    'b': 3,    # slabs (retextured crafting table)
+    'b': 3,    # slabs (retextured furnace)
     'X': 4,    # bricks
     'D': 5,    # grass
     'd': 6,    # dirt
     '~': 7,    # sand
     'w': 8,    # planks
     'L': 9,    # log
-    'l': 10,   # leaves
+    'l': 10,   # leaves (retextured diamond ore)
     '%': 11,   # wool
     '-': 12,   # goldblock
     '=': 13,   # ironblock
@@ -69,14 +69,14 @@ id2mcpi = {
     0:  0,
     1:  1,
     2:  4,
-    3:  58, # (retextured crafting table)
+    3:  61, # (retextured furnace)
     4:  45,
     5:  2,
     6:  3,
     7:  12,
     8:  5,
     9:  17,
-    10: 18,
+    10: 56, # (retextured diamond ore)
     11: 35,
     12: 41,
     13: 42,
