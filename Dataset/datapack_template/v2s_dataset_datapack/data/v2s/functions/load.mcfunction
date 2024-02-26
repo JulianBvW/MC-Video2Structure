@@ -1,0 +1,2 @@
+scoreboard objectives remove v2s_rclick
+scoreboard objectives add v2s_rclick minecraft.used:minecraft.carrot_on_a_stick
