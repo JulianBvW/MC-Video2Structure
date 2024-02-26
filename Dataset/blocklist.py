@@ -69,7 +69,7 @@ id2mcpi = {
     0:  0,
     1:  1,
     2:  4,
-    3:  58, # retextured crafting table)
+    3:  58, # (retextured crafting table)
     4:  45,
     5:  2,
     6:  3,
