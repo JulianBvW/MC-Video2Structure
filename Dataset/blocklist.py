@@ -74,7 +74,7 @@ id2mcpi = {
     5:  2,
     6:  3,
     7:  12,
-    8:  5,
+    8:  16, # (retextured coal ore)
     9:  17,
     10: 56, # (retextured diamond ore)
     11: 35,

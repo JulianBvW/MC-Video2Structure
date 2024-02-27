@@ -61,7 +61,7 @@ bricks       | `X`         |  4 | 45
 grass        | `D`         |  5 | 2
 dirt         | `d`         |  6 | 3
 sand         | `~`         |  7 | 12
-planks       | `w`         |  8 | 5
+planks       | `w`         |  8 | 16 (retextured coal ore)
 log          | `L`         |  9 | 17
 leaves       | `l`         | 10 | 56 (retextured diamond ore)
 wool         | `%`         | 11 | 35
