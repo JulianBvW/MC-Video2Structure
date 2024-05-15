@@ -49,29 +49,29 @@ The first version of this project will have some major limitations that can be i
 - no GUI shown and probably a set FOV, and
 - a small selection of **18 blocks** (listed below).
 
-Block list with their corresponding structure symbol, model id, and the id used by *mcpi* internally:
+Block list with their corresponding structure symbol, model id, hue for the BSA textures, and the id used by *mcpi* internally:
 
-Block Name | Symbol | `id` | `mcpi id`
---- | --- | --- | ---
-air          | ` ` [space] |  0 | 0
-stone        | `s`         |  1 | 1
-cobblestone  | `c`         |  2 | 4
-slabs        | `b`         |  3 | 61 (retextured furnace)
-bricks       | `X`         |  4 | 45
-grass        | `D`         |  5 | 2
-dirt         | `d`         |  6 | 3
-sand         | `~`         |  7 | 12
-planks       | `w`         |  8 | 16 (retextured coal ore)
-log          | `L`         |  9 | 17
-leaves       | `l`         | 10 | 56 (retextured diamond ore)
-wool         | `%`         | 11 | 35
-goldblock    | `-`         | 12 | 41
-ironblock    | `=`         | 13 | 42
-diamondblock | `+`         | 14 | 57
-bookshelf    | `*`         | 15 | 47
-obsidian     | `O`         | 16 | 49
-glowstone    | `G`         | 17 | 89
-melon        | `@`         | 18 | 103
+Block Name | Symbol | `id` | HSV Hue | `mcpi id`
+--- | --- | --- | --- | ---
+air          | ` ` [space] |  0 |   - | 0
+stone        | `s`         |  1 |   0 | 1
+cobblestone  | `c`         |  2 |  20 | 4
+slabs        | `b`         |  3 |  40 | 61 (retextured furnace)
+bricks       | `X`         |  4 |  60 | 45
+grass        | `D`         |  5 |  80 | 2
+dirt         | `d`         |  6 |   - | 3
+sand         | `~`         |  7 | 120 | 12
+planks       | `w`         |  8 | 140 | 16 (retextured coal ore)
+log          | `L`         |  9 | 160 | 17
+leaves       | `l`         | 10 | 180 | 56 (retextured diamond ore)
+wool         | `%`         | 11 | 200 | 35
+goldblock    | `-`         | 12 | 220 | 41
+ironblock    | `=`         | 13 | 240 | 42
+diamondblock | `+`         | 14 | 260 | 57
+bookshelf    | `*`         | 15 | 280 | 47
+obsidian     | `O`         | 16 | 300 | 49
+glowstone    | `G`         | 17 | 320 | 89
+melon        | `@`         | 18 | 340 | 103
 
 For the structure files there are also place holders:
 
