@@ -34,7 +34,19 @@ The general outline of the dataset generation is the following:
 
 ### Recording coordinates
 
-Run `python create_mc_blocks.py <MINUTES TO RUN FOR>`. It will build a random structure and count down from 5 seconds. Position yourself where you want to start and then just walk and look around. The script will automatically save the camera pose every second. After the specified time period, a datapack is created TODO
+Run `python create_mc_blocks.py <MINUTES TO RUN FOR>`. It will build a random structure and count down from 5 seconds. Position yourself where you want to start and then just walk and look around. The script will automatically save the camera pose every second. After the specified time period, a datapack is created TODO (copy in datapack folder)
+
+### 1. Getting images
+
+TBA (Block Texture Pack)
+
+### 2. Getting BSA data
+
+TBA (Segmentation Texture Pack + No Shadow Shader)
+
+### 3. Getting BDE data
+
+TBA (Depth Shader)
 
 ## Generating **MC Structure Videos**
 
