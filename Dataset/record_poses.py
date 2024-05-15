@@ -12,6 +12,9 @@ import mcpi.minecraft as minecraft
 
 out_dir = 'output/run_' + datetime.now().strftime('%Y-%m-%d-%H-%M-%S') + '/'
 os.makedirs(out_dir)
+os.makedirs(out_dir + 'screenshots/')
+os.makedirs(out_dir + 'BSA_screenshots/')
+os.makedirs(out_dir + 'BDE_screenshots/')
 
 mc = minecraft.Minecraft.create()
 base = (10, 1, 10)
