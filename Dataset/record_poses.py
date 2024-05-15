@@ -48,4 +48,4 @@ with open(out_dir + 'v2s_dataset_datapack/data/v2s/functions/tick.mcfunction', '
         tp = f'tp @a[scores={{v2s_rclick={i+1}}}] {p.x} {p.y} {p.z} {p.rot} {p.pit}\n'
         f.write(tp)
 
-print(f'Poses and datapck saved to `{out_dir}`')
+print(f'Poses and datapack saved to `{out_dir}`')
