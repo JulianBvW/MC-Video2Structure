@@ -34,7 +34,7 @@ The general outline of the dataset generation is the following:
 
 ### Recording coordinates
 
-Run `python create_mc_blocks.py <MINUTES TO RUN FOR>`. It will build a random structure and count down from 5 seconds. Position yourself where you want to start and then just walk and look around. The script will automatically save the camera pose every second. After the specified time period, a datapack is created TODO (copy in datapack folder)
+Run `python record_poses.py <NUM COORDS TO RECORD>`. It will build a random structure and count down from 5 seconds. Position yourself where you want to start and then just walk and look around. The script will automatically save the camera pose every second. After the specified time period, a datapack is created TODO (copy in datapack folder)
 
 ### 1. Getting images
 
@@ -42,7 +42,7 @@ TBA (Block Texture Pack)
 
 ### 2. Getting BSA data
 
-TBA (Segmentation Texture Pack + No Shadow Shader)
+TBA (Segmentation Texture Pack + No Shadow Shader + Light Level 15 Blocks)
 
 ### 3. Getting BDE data
 
@@ -68,7 +68,7 @@ Block Name | Symbol | `id` | HSV Hue | `mcpi id`
 air          | ` ` [space] |  0 |   - | 0
 stone        | `s`         |  1 |   0 | 1
 cobblestone  | `c`         |  2 |  20 | 4
-slabs        | `b`         |  3 |  40 | 61 (retextured furnace)
+slabs        | `b`         |  3 |  40 | 24 (retextured sandstone)
 bricks       | `X`         |  4 |  60 | 45
 grass        | `D`         |  5 |  80 | 2
 dirt         | `d`         |  6 |   - | 3
