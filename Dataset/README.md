@@ -61,6 +61,8 @@ The first version of this project will have some major limitations that can be i
 - no GUI shown and probably a set FOV, and
 - a small selection of **18 blocks** (listed below).
 
+## Block list
+
 Block list with their corresponding structure symbol, model id, hue for the BSA textures, and the id used by *mcpi* internally:
 
 Block Name | Symbol | `id` | HSV Hue | `mcpi id`
@@ -95,3 +97,18 @@ Place Holder | Symbol | `ids` mapped to
 [Building] Roof       | `R` | `[2, 4, 8, 8, 8]`
 [Decoration] Interior | `$` | `[0, 0, 0, 0, 0, 0, 12, 13, 14, 15, 15, 15, 17, 17]`
 [Decoration] Garden | `#` | `[0, 0, 0, 5, 5, 10, 15, 18, 18, 18]`
+
+## PowerShell Script for macro
+
+This PowerShell script will alternately press y and u which you can bind to be right click and capture screenshot.
+
+```
+Start-Sleep -Seconds 5
+for ($i = 0; $i -lt 501; $i++) {
+    Add-Type -AssemblyName System.Windows.Forms
+    [System.Windows.Forms.SendKeys]::SendWait("y")
+    Start-Sleep -Milliseconds 500
+    [System.Windows.Forms.SendKeys]::SendWait("u")
+    Start-Sleep -Milliseconds 500
+}
+```
