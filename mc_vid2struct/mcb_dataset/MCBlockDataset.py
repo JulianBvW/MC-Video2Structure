@@ -12,7 +12,7 @@ DEFAULT_TRANSFORM = transforms.Compose([
 ])
 
 class MCBlockDataset(Dataset):
-    def __init__(self, dataset_path='Dataset/dataset/', transform=DEFAULT_TRANSFORM):
+    def __init__(self, dataset_path='mc_vid2struct/mcb_dataset/dataset/', transform=DEFAULT_TRANSFORM):
         self.screenshot_path = dataset_path + 'screenshots/'
         self.poses = pd.read_csv(dataset_path + 'poses.csv')
         self.transform = transform

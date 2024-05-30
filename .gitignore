@@ -1,5 +1,5 @@
-Dataset/output/
-Dataset/dataset/
+mc_vid2struct/mcb_dataset/output/
+mc_vid2struct/mcb_dataset/dataset/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
