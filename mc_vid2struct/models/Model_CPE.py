@@ -4,7 +4,7 @@ import torch.nn.functional as F
 import torch.nn as nn
 import numpy as np
 
-from utils import conv_output_shape
+from mc_vid2struct.models.utils import conv_output_shape
 from mc_vid2struct.mcb_dataset.MCBlocksDataset import CAMERA_SIZE
 
 class Model_CPE(nn.Module):

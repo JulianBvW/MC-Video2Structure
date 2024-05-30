@@ -1,7 +1,8 @@
-from torch.utils.data import Dataset, DataLoader, random_split
+from torch.utils.data import Dataset
 from torchvision import transforms
 from PIL import Image
 import pandas as pd
+import torch
 import math
 
 CAMERA_SIZE = (854 // 2, 480 // 2)
@@ -27,15 +28,9 @@ class MCBlocksDataset(Dataset):
         screenshot = self.transform(screenshot)
 
         # TODO pitch
-        pit = self.poses['pit'][idx]
+        pit = torch.tensor(self.poses['pit'][idx], dtype=torch.float) 
 
         # TODO y level
         # y_level = self.poses['y'][idx] - math.floor(self.poses['y'][idx]) # TODO only get local coord
 
         return screenshot, pit
-
-full_dataset = MCBlocksDataset()
-train_dataset, test_dataset = random_split(full_dataset, [0.8, 0.2])
-
-train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, num_workers=4)
-test_loader = DataLoader(test_dataset, batch_size=32, shuffle=False, num_workers=4)
