@@ -5,7 +5,7 @@ from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
-from MCBlockDataset import MCBlockDataset
+from mc_vid2struct.mcb_dataset.MCBlocksDataset import MCBlocksDataset
 
 NO_NORM_TRANSFORM = transforms.Compose([
     transforms.Resize((854 // 2, 480 // 2)),
@@ -13,7 +13,7 @@ NO_NORM_TRANSFORM = transforms.Compose([
 ])
 
 # Load the dataset
-dataset = MCBlockDataset(transform=NO_NORM_TRANSFORM)
+dataset = MCBlocksDataset(transform=NO_NORM_TRANSFORM)
 dataloader = DataLoader(dataset, batch_size=64, shuffle=False, num_workers=4)
 
 # Initialize normalization variables

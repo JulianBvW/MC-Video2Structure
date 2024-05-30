@@ -1,17 +1,17 @@
-import torch.utils
 from torch.utils.data import Dataset, DataLoader, random_split
 from torchvision import transforms
 from PIL import Image
 import pandas as pd
 import math
 
+CAMERA_SIZE = (854 // 2, 480 // 2)
 DEFAULT_TRANSFORM = transforms.Compose([
-    transforms.Resize((854 // 2, 480 // 2)),
+    transforms.Resize(CAMERA_SIZE),
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.3955, 0.3832, 0.3661], std=[0.1625, 0.1902, 0.2550])
 ])
 
-class MCBlockDataset(Dataset):
+class MCBlocksDataset(Dataset):
     def __init__(self, dataset_path='mc_vid2struct/mcb_dataset/dataset/', transform=DEFAULT_TRANSFORM):
         self.screenshot_path = dataset_path + 'screenshots/'
         self.poses = pd.read_csv(dataset_path + 'poses.csv')
@@ -34,7 +34,7 @@ class MCBlockDataset(Dataset):
 
         return screenshot, pit
 
-full_dataset = MCBlockDataset()
+full_dataset = MCBlocksDataset()
 train_dataset, test_dataset = random_split(full_dataset, [0.8, 0.2])
 
 train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, num_workers=4)
