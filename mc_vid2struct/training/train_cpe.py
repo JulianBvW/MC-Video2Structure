@@ -17,7 +17,7 @@ DEVICE = torch.device('cuda') if torch.cuda.is_available() else torch.device('cp
 full_dataset = MCBlocksDataset()
 train_dataset, test_dataset = random_split(full_dataset, [0.8, 0.2])
 
-train_loader = DataLoader(train_dataset, batch_size=6, shuffle=True, num_workers=4) # TODO 32
+train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, num_workers=4)
 test_loader = DataLoader(test_dataset, batch_size=32, shuffle=False, num_workers=4)
 
 ### Load Model
