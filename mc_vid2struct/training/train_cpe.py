@@ -53,6 +53,8 @@ for epoch in range(NUM_EPOCHS):
     epoch_loss = running_loss / len(train_loader.dataset)
     print(f'Epoch {epoch+1}/{NUM_EPOCHS}, Loss: {epoch_loss:.4f}')
 
+print('Finished training after:', datetime.now() - start_time)
+
 model.eval()
 test_loss = 0.0
 
@@ -68,5 +70,3 @@ with torch.no_grad():
 
 test_loss /= len(test_loader.dataset)
 print(f'Test Loss: {test_loss:.4f}')
-
-print('Finished after:', datetime.now() - start_time)
