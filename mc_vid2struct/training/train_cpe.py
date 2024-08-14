@@ -2,10 +2,11 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, random_split
 
-from tqdm import tqdm
+import pandas as pd
 from datetime import datetime
 
 from mc_vid2struct.mcb_dataset.MCBlocksDataset import MCBlocksDataset
+from mc_vid2struct.training.utils import train_step, test_step
 from mc_vid2struct.training.circular_loss import CircularLoss
 from mc_vid2struct.models.Model_CPE import Model_CPE
 
@@ -33,40 +34,27 @@ optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
 NUM_EPOCHS = 50 # TODO ArgParse
 
+train_losses = []
+test_losses = []
+
 start_time = datetime.now()
 for epoch in range(NUM_EPOCHS):
-    model.train()
-    running_loss = 0.0
 
-    for screenshots, labels in tqdm(train_loader):
-        screenshots, labels = screenshots.to(DEVICE), labels.to(DEVICE)
+    train_loss = train_step(model, test_loader, criterion, optimizer, DEVICE)
+    test_loss  = test_step(model, test_loader, criterion, DEVICE)
 
-        optimizer.zero_grad()
-        outputs = model(screenshots)
-        loss = criterion(outputs, labels)
-        loss.backward()
-        optimizer.step()
+    train_losses.append(train_loss)
+    test_losses.append(test_loss)
 
-        running_loss += loss.item() * screenshots.size(0)
-        screenshots, labels = screenshots.to('cpu'), labels.to('cpu')
-    
-    epoch_loss = running_loss / len(train_loader.dataset)
-    print(f'Epoch {epoch+1}/{NUM_EPOCHS}, Loss: {epoch_loss:.4f}')
+    print(f'Epoch {epoch+1}/{NUM_EPOCHS} finished | Train Loss: {train_loss:.4f} | Test Loss: {test_loss:.4f}')
 
 print('Finished training after:', datetime.now() - start_time)
 
-model.eval()
-test_loss = 0.0
+# Save results
+df = pd.DataFrame({
+    'Train Loss': train_losses,
+    'Test Loss': test_losses
+})
+df.to_csv(f'mc_vid2struct/training/losses.csv', index=False)
 
-with torch.no_grad():
-    for screenshots, labels in tqdm(test_loader):
-        screenshots, labels = screenshots.to(DEVICE), labels.to(DEVICE)
-        outputs = model(screenshots)
-        loss = criterion(outputs, labels)
-        for i in range(len(labels)):
-            print(outputs[i], labels[i])
-        test_loss += loss.item() * screenshots.size(0)
-        screenshots, labels = screenshots.to('cpu'), labels.to('cpu')
-
-test_loss /= len(test_loader.dataset)
-print(f'Test Loss: {test_loss:.4f}')
+test_loss  = test_step(model, test_loader, criterion, DEVICE, verbose=True)
