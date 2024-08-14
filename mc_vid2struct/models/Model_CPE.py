@@ -29,7 +29,7 @@ class Model_CPE(nn.Module):
         # Fully connected layers
         self.fc1 = nn.Linear(in_features=self.fc_input_size, out_features=512)
         self.fc2 = nn.Linear(in_features=512, out_features=128)
-        self.fc3 = nn.Linear(in_features=128, out_features=1)
+        self.fc3 = nn.Linear(in_features=128, out_features=2)
     
     def forward(self, x):
 
@@ -41,7 +41,7 @@ class Model_CPE(nn.Module):
         # Flatten the tensor
         x = x.view(-1, self.fc_input_size)
         
-        # Fully connected layers with dropout
+        # Fully connected layers
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
         x = self.fc3(x)

@@ -5,6 +5,8 @@ import pandas as pd
 import torch
 import math
 
+from mc_vid2struct.mcb_dataset.utils import rot_to_sin_cos_repr
+
 CAMERA_SIZE = (854 // 2, 480 // 2)
 DEFAULT_TRANSFORM = transforms.Compose([
     transforms.Resize(CAMERA_SIZE),
@@ -28,9 +30,10 @@ class MCBlocksDataset(Dataset):
         screenshot = self.transform(screenshot)
 
         # TODO pitch
-        pit = torch.tensor(self.poses['pit'][idx], dtype=torch.float) 
+        pit = self.poses['pit'][idx]
+        labels = torch.tensor(rot_to_sin_cos_repr(pit), dtype=torch.float)
 
         # TODO y level
         # y_level = self.poses['y'][idx] - math.floor(self.poses['y'][idx]) # TODO only get local coord
 
-        return screenshot, pit
+        return screenshot, labels
