@@ -7,7 +7,7 @@ import math
 
 from mc_vid2struct.mcb_dataset.utils import rot_to_sin_cos_repr
 
-CAMERA_SIZE = (854 // 2, 480 // 2)
+CAMERA_SIZE = (854, 480) # (854 // 2, 480 // 2)
 DEFAULT_TRANSFORM = transforms.Compose([
     transforms.Resize(CAMERA_SIZE),
     transforms.ToTensor(),
