@@ -62,9 +62,9 @@ with torch.no_grad():
     for screenshots, labels in tqdm(test_loader):
         screenshots, labels = screenshots.to(DEVICE), labels.to(DEVICE)
         outputs = model(screenshots)
-        loss = criterion(outputs, labels.view((-1, 1)))
+        loss = criterion(outputs, labels)
         for i in range(len(labels)):
-            print(outputs[i], labels.view((-1, 1))[i])
+            print(outputs[i], labels[i])
         test_loss += loss.item() * screenshots.size(0)
         screenshots, labels = screenshots.to('cpu'), labels.to('cpu')
 
