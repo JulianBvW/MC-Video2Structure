@@ -1,7 +1,9 @@
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, random_split
+
 from tqdm import tqdm
+from datetime import datetime
 
 from mc_vid2struct.mcb_dataset.MCBlocksDataset import MCBlocksDataset
 from mc_vid2struct.training.circular_loss import CircularLoss
@@ -30,6 +32,8 @@ optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 ### Train loop
 
 NUM_EPOCHS = 50 # TODO ArgParse
+
+start_time = datetime.now()
 for epoch in range(NUM_EPOCHS):
     model.train()
     running_loss = 0.0
@@ -64,3 +68,5 @@ with torch.no_grad():
 
 test_loss /= len(test_loader.dataset)
 print(f'Test Loss: {test_loss:.4f}')
+
+print('Finished after:', datetime.now() - start_time)
