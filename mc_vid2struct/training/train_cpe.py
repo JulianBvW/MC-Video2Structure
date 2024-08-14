@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, random_split
 
+import numpy as np
 import pandas as pd
 from datetime import datetime
 
@@ -25,6 +26,14 @@ test_loader = DataLoader(test_dataset, batch_size=32, shuffle=False, num_workers
 
 model = Model_CPE().to(DEVICE)
 
+
+print('------- Using model with parameters -------')
+print(f'  Input Size:          {model.camera_size} (={np.prod(model.camera_size)})')
+print(f'  Size after Convs:    {model.size_after_convs} (={np.prod(model.size_after_convs)})')
+print(f'  Final Conv Channels: {model.final_conv_channels}')
+print(f'  Flattened Size:      {model.fc_input_size}')
+print('-------------------------------------------')
+
 ### Load Loss and Optimizer
 
 criterion = CircularLoss()
@@ -40,7 +49,7 @@ test_losses = []
 start_time = datetime.now()
 for epoch in range(NUM_EPOCHS):
 
-    train_loss = train_step(model, test_loader, criterion, optimizer, DEVICE)
+    train_loss = train_step(model, train_loader, criterion, optimizer, DEVICE)
     test_loss  = test_step(model, test_loader, criterion, DEVICE)
 
     train_losses.append(train_loss)
